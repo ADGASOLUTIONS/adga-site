@@ -104,3 +104,25 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
     justify-content: center; font-size: 30px; z-index: 1000; text-decoration: none; 
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
+
+/* Adaptations Mobiles */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        margin-top: 15px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links li a {
+        margin-left: 0;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+}
