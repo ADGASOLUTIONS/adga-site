@@ -6,7 +6,82 @@
     <title>ADGA SOLUTIONS - Digital & BTP au Bénin</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        :root {
+            --blue: #0056b3;
+            --red: #e63946;
+            --white: #ffffff;
+            --dark: #333;
+            --light: #f4f4f4;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Montserrat', sans-serif; line-height: 1.6; color: var(--dark); background: var(--white); overflow-x: hidden; }
+        .container { max-width: 1100px; margin: auto; padding: 0 20px; }
+        .section-padding { padding: 60px 0; }
+        .title { text-align: center; color: var(--blue); margin-bottom: 30px; text-transform: uppercase; font-size: 1.5rem; }
+
+        /* Navigation Ordinateur */
+        header { 
+            background: var(--white); 
+            padding: 10px 0; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+        }
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo-img { height: 50px; }
+        .nav-links { display: flex; list-style: none; }
+        .nav-links li a { text-decoration: none; color: var(--blue); margin-left: 20px; font-weight: bold; }
+
+        /* Navigation Mobile (Barre du bas) */
+        .mobile-nav { display: none; }
+
+        /* Hero Section */
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://img.freepik.com/photos-gratuite/ingenieur-africain-casque-securite-jaune-travaillant-dans-chantier-construction_627829-5147.jpg') no-repeat center/cover; 
+            height: 70vh; display: flex; align-items: center; justify-content: center; color: white; text-align: center; padding: 0 20px;
+        }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+        .btn-primary { background: var(--red); color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; margin-top: 20px; }
+
+        /* Grille Services */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
+        .card { background: var(--light); padding: 30px; border-radius: 10px; text-align: center; border-bottom: 4px solid var(--blue); transition: 0.3s; }
+        .card i { font-size: 40px; color: var(--red); margin-bottom: 15px; }
+
+        /* Portfolio */
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
+        .portfolio-item { position: relative; height: 200px; border-radius: 10px; overflow: hidden; }
+        .portfolio-item img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* Contact Form */
+        .contact-form { display: flex; flex-direction: column; gap: 10px; max-width: 500px; margin: auto; }
+        .contact-form input, .contact-form textarea { padding: 12px; border: 1px solid #ccc; border-radius: 5px; width: 100%; }
+        .btn-submit { background: var(--blue); color: white; border: none; padding: 15px; cursor: pointer; border-radius: 5px; font-weight: bold; }
+
+        /* WhatsApp */
+        .whatsapp-btn { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; z-index: 1000; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+
+        /* MEDIA QUERIES (Spécial Mobile) */
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* Cache le menu du haut */
+            header nav { justify-content: center; } /* Centre le logo */
+            
+            .mobile-nav { 
+                display: flex; position: fixed; bottom: 0; left: 0; width: 100%; background: white; 
+                justify-content: space-around; padding: 10px 0; box-shadow: 0 -2px 10px rgba(0,0,0,0.1); z-index: 2000; 
+            }
+            .mobile-nav a { text-decoration: none; color: var(--blue); font-size: 11px; text-align: center; font-weight: bold; }
+            .mobile-nav i { display: block; font-size: 18px; margin-bottom: 2px; }
+            
+            .hero h1 { font-size: 1.8rem; }
+            section { padding-bottom: 80px; } /* Espace pour la barre du bas */
+            .whatsapp-btn { bottom: 80px; } /* Remonte le bouton WhatsApp */
+        }
+    </style>
 </head>
 <body>
 
@@ -32,59 +107,17 @@
     <section id="accueil" class="hero">
         <div class="hero-content">
             <h1>ADGA SOLUTIONS</h1>
-            <p>Votre partenaire pour des solutions intégrées et durables </p>
+            <p>Votre partenaire pour des solutions intégrées et durables</p>
             <a href="#contact" class="btn-primary">Demander un devis</a>
         </div>
     </section>
 
     <section id="services" class="container section-padding">
-        <h2 class="title">NOS DOMAINES D'INTERVENTION </h2>
-        <p style="text-align: center; margin-bottom: 30px;">ADGA SOLUTIONS est une entreprise multisectorielle dynamique, dédiée à fournir des solutions intégrées de haute qualité.</p>
+        <h2 class="title">Nos Domaines d'Intervention</h2>
         <div class="grid">
-            <div class="card">
-                <i class="fas fa-laptop-code"></i>
-                <h3>Informatique & TIC</h3>
-                <p>Solutions intégrées, logiciels, web, mobile, sécurité et maintenance.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-hard-hat"></i>
-                <h3>BTP</h3>
-                <p>Construction, infrastructures, contrôle et suivi de travaux.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-truck"></i>
-                <h3>Transport & Logistique</h3>
-                <p>Chaîne d'approvisionnement et entreposage.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-broom"></i>
-                <h3>Entretien</h3>
-                <p>Assainissement et nettoyage industriel/bâtiment.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-shopping-cart"></i>
-                <h3>Commerce</h3>
-                <p>Fourniture et installation d'équipements, commerce général.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-star"></i>
-                <h3>Services Divers</h3>
-                <p>Prestations multisectorielles sur mesure.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="realisations" class="container section-padding">
-        <h2 class="title">Nos Réalisations</h2>
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <img src="https://img.freepik.com/photos-gratuite/concept-immobilier-construction-avec-ingenieur-casque_23-2148107567.jpg" alt="Chantier">
-                <div class="overlay"><h4>Projet BTP Sèmè-Podji</h4></div>
-            </div>
-            <div class="portfolio-item">
-                <img src="https://img.freepik.com/photos-gratuite/developpement-programmation-site-web-codage-ordinateur_53876-120948.jpg" alt="Digital">
-                <div class="overlay"><h4>Application de Gestion</h4></div>
-            </div>
+            <div class="card"><i class="fas fa-laptop-code"></i><h3>Informatique</h3><p>Solutions Web & Logiciels.</p></div>
+            <div class="card"><i class="fas fa-hard-hat"></i><h3>BTP</h3><p>Construction & Infrastructures.</p></div>
+            <div class="card"><i class="fas fa-truck"></i><h3>Logistique</h3><p>Transport & Approvisionnement.</p></div>
         </div>
     </section>
 
@@ -93,15 +126,12 @@
         <form action="https://formspree.io/f/xykovkbq" method="POST" class="contact-form">
             <input type="text" name="nom" placeholder="Nom complet" required>
             <input type="email" name="email" placeholder="Votre Email" required>
-            <textarea name="message" rows="5" placeholder="Votre projet..." required></textarea>
+            <textarea name="message" rows="4" placeholder="Votre projet..." required></textarea>
             <button type="submit" class="btn-submit">Envoyer</button>
         </form>
     </section>
 
-    <a href="https://wa.me/2290140542831" class="whatsapp-btn" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <a href="https://wa.me/2290140542831" class="whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-    <script src="script.js"></script>
 </body>
 </html>
