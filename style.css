@@ -1,0 +1,339 @@
+/* Variables d'identité visuelle - ADGA SOLUTIONS */
+:root {
+    --blue: #002060;       /* Bleu Marine Officiel */
+    --red: #C00000;        /* Rouge Accent Officiel */
+    --white: #ffffff;
+    --dark: #1f2937;
+    --light-bg: #f2f4f7;   /* Gris-bleu très clair pour le fond */
+}
+
+/* Réinitialisation de base */
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+body { 
+    font-family: 'Montserrat', sans-serif; 
+    line-height: 1.6; 
+    color: var(--dark); 
+    background: var(--white);
+    overflow-x: hidden; 
+}
+
+.container { 
+    max-width: 1200px; 
+    margin: auto; 
+    padding: 0 20px; 
+}
+
+.section-padding { 
+    padding: 80px 0; 
+}
+
+.bg-light {
+    background-color: var(--light-bg);
+}
+
+.title { 
+    text-align: center; 
+    color: var(--blue); 
+    margin-bottom: 10px; 
+    text-transform: uppercase; 
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Barre de Navigation (Ordinateur) --- */
+header { 
+    background: var(--white); 
+    padding: 15px 0; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05); 
+}
+
+nav { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.logo-img { 
+    height: 55px; 
+}
+
+.nav-links { 
+    display: flex; 
+    list-style: none; 
+}
+
+.nav-links li a { 
+    text-decoration: none; 
+    color: var(--blue); 
+    margin-left: 25px; 
+    font-weight: 700; 
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: var(--red);
+}
+
+.mobile-nav { 
+    display: none; 
+}
+
+/* --- Section Hero (Accueil) --- */
+.hero { 
+    background: linear-gradient(rgba(0, 32, 96, 0.8), rgba(0, 32, 96, 0.6)), url('https://img.freepik.com/photos-gratuite/ingenieur-africain-casque-securite-jaune-travaillant-dans-chantier-construction_627829-5147.jpg') no-repeat center/cover; 
+    height: 80vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    color: white; 
+    text-align: center; 
+    padding: 0 20px;
+}
+
+.hero h1 { 
+    font-size: 3.5rem; 
+    margin-bottom: 15px; 
+    font-weight: 700;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.3); 
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    max-width: 800px;
+}
+
+.btn-primary { 
+    background: var(--red); 
+    color: white; 
+    padding: 14px 35px; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    font-weight: bold; 
+    display: inline-block; 
+    transition: transform 0.3s, background-color 0.3s;
+    box-shadow: 0 4px 15px rgba(192, 0, 0, 0.4);
+}
+
+.btn-primary:hover {
+    background: #a00000;
+    transform: translateY(-2px);
+}
+
+/* --- Grille Services & Cartes --- */
+.grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 25px; 
+}
+
+.card { 
+    background: var(--white); 
+    padding: 40px 30px; 
+    border-radius: 10px; 
+    text-align: center; 
+    border-bottom: 5px solid var(--blue); 
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card i { 
+    font-size: 45px; 
+    color: var(--red); 
+    margin-bottom: 20px; 
+}
+
+.card h3 {
+    color: var(--blue);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.card ul {
+    list-style: none;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.card ul li {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    color: #555;
+}
+
+.card ul li::before {
+    content: "•";
+    color: var(--red);
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* Retards d'animation */
+.grid .card:nth-child(1) { transition-delay: 0.1s; }
+.grid .card:nth-child(2) { transition-delay: 0.2s; }
+.grid .card:nth-child(3) { transition-delay: 0.3s; }
+.grid .card:nth-child(4) { transition-delay: 0.4s; }
+
+/* --- Section À Propos / Identité --- */
+.about-box {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--red);
+}
+.about-box p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+/* --- Portfolio (Réalisations) --- */
+.portfolio-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px; 
+}
+
+.portfolio-item { 
+    position: relative; 
+    height: 250px; 
+    border-radius: 10px; 
+    overflow: hidden; 
+    cursor: pointer; 
+}
+
+.portfolio-item img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    transition: transform 0.4s;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.08); 
+}
+
+.overlay { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0, 32, 96, 0.9); 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    opacity: 0; 
+    transition: 0.4s; 
+    color: white; 
+    padding: 20px;
+    text-align: center;
+}
+
+.portfolio-item:hover .overlay { 
+    opacity: 1; 
+}
+
+/* --- Système de Lightbox --- */
+#lightbox {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 3000;
+    display: flex; justify-content: center; align-items: center;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+#lightbox.active {
+    opacity: 1; pointer-events: auto;
+}
+.lightbox-content {
+    max-width: 80%; max-height: 80%; text-align: center; position: relative;
+}
+.lightbox-content img {
+    max-width: 100%; max-height: 65vh; border-radius: 5px;
+}
+.lightbox-content h3 {
+    color: var(--white); margin-top: 15px; font-size: 1.4rem;
+}
+.lightbox-close {
+    position: absolute; top: -45px; right: 0; color: var(--white); font-size: 2.5rem; cursor: pointer;
+}
+
+/* --- Formulaire de Contact --- */
+.contact-form { 
+    display: flex; flex-direction: column; gap: 15px; max-width: 600px; margin: auto; 
+}
+.contact-form input, .contact-form textarea { 
+    padding: 14px; border: 1px solid #ccc; border-radius: 5px; width: 100%; font-family: inherit; font-size: 1rem;
+}
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: var(--blue);
+    outline: none;
+}
+.btn-submit { 
+    background: var(--blue); color: white; border: none; padding: 15px; cursor: pointer; border-radius: 5px; font-weight: bold; font-size: 1rem; transition: background 0.3s;
+}
+.btn-submit:hover {
+    background: #001640;
+}
+
+/* --- Pied de page (Footer) --- */
+footer {
+    background-color: var(--blue);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+    font-size: 0.95rem;
+}
+
+/* --- Bouton WhatsApp --- */
+.whatsapp-btn { 
+    position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; z-index: 1000; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); 
+}
+
+/* --- AJUSTEMENTS MOBILE --- */
+@media (max-width: 768px) {
+    .nav-links { display: none; } 
+    header nav { justify-content: center; }
+    
+    .mobile-nav { 
+        display: flex; position: fixed; bottom: 0; left: 0; width: 100%; background: white; justify-content: space-around; padding: 12px 0; box-shadow: 0 -2px 10px rgba(0,0,0,0.1); z-index: 2000; 
+    }
+    .mobile-nav a { text-decoration: none; color: var(--blue); font-size: 11px; text-align: center; font-weight: bold; }
+    .mobile-nav i { display: block; font-size: 20px; margin-bottom: 2px; }
+    
+    .hero h1 { font-size: 2.2rem; }
+    .hero p { font-size: 1.1rem; }
+    .title { font-size: 1.6rem; }
+    section { padding-bottom: 90px; }
+    .whatsapp-btn { bottom: 85px; }
+}
