@@ -7,6 +7,57 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles spécifiques pour les détails extensibles de GEC PRO */
+        .gec-detail {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            padding: 15px 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        .gec-detail[open] {
+            border-left: 5px solid var(--blue);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .gec-summary {
+            font-weight: 700;
+            color: var(--blue);
+            cursor: pointer;
+            font-size: 1.1rem;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .gec-summary::-webkit-details-marker {
+            display: none;
+        }
+        .gec-summary::after {
+            content: '\f078';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            transition: transform 0.3s ease;
+            color: var(--red);
+        }
+        .gec-detail[open] .gec-summary::after {
+            transform: rotate(180deg);
+        }
+        .gec-content {
+            margin-top: 15px;
+            color: #4a5568;
+            font-size: 0.98rem;
+            line-height: 1.7;
+            border-top: 1px solid #edf2f7;
+            padding-top: 15px;
+            text-align: left;
+        }
+        .gec-content strong {
+            color: var(--dark);
+        }
+    </style>
 </head>
 <body>
 
@@ -17,6 +68,7 @@
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#about">Qui sommes-nous ?</a></li>
                 <li><a href="#services">Expertises</a></li>
+                <li><a href="#solutions-numeriques">Solutions Numériques</a></li>
                 <li><a href="#realisations">Réalisations</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -27,6 +79,7 @@
         <a href="#accueil"><i class="fas fa-home"></i>Accueil</a>
         <a href="#about"><i class="fas fa-info-circle"></i>À Propos</a>
         <a href="#services"><i class="fas fa-cogs"></i>Services</a>
+        <a href="#solutions-numeriques"><i class="fas fa-laptop-code"></i>Solutions</a>
         <a href="#realisations"><i class="fas fa-images"></i>Projets</a>
         <a href="#contact"><i class="fas fa-envelope"></i>Contact</a>
     </div>
@@ -44,8 +97,8 @@
         <p class="subtitle">Une structure dynamique au cœur du développement au Bénin</p>
         
         <div class="about-box">
-            <p><strong>ADGA SOLUTIONS</strong> est une entreprise multisectorielle dynamique, dédiée à fournir des solutions intégrées de haute qualité.</p>
-            <p>Créée officiellement le <strong>08 Mai 2026</strong> et enregistrée sous le numéro officiel <strong>n° RB/PNO/26 A 125246</strong>, notre force repose sur un capital humain dynamique, rompu à la tâche et prêt à répondre dans les meilleurs délais aux besoins stratégiques de notre clientèle.</p>
+            <p><strong>ADGA SOLUTIONS</strong> est une enterprise multisectorielle dynamique, dédiée à fournir des solutions intégrées de haute qualité.</p>
+            <p>Créée officiellement le <strong>08 Mai 2026</strong> et enregistrée sous le numéro officiel <strong> RB/PNO/26 A 125246</strong>, notre force repose sur un capital humain dynamique, rompu à la tâche et prêt à répondre dans les meilleurs délais aux besoins stratégiques de notre clientèle.</p>
         </div>
     </section>
 
@@ -57,10 +110,14 @@
             <div class="grid">
                 <div class="card">
                     <i class="fas fa-laptop-code"></i>
-                    <h3>TIC & Écosystèmes Digitaux</h3>
+                    <h3>TIC & Écosystèmes Digitaux (GEC PRO)</h3>
+                    <p style="font-size: 0.9rem; margin-bottom: 10px; color: #555; text-align: left;">
+                        Nous transformons la gestion de vos documents avec notre solution phare <strong>GEC PRO</strong>, conçue pour éradiquer la lenteur administrative et interconnecter vos pôles stratégiques (Secrétariat, DG, DAF, RH, Commercial).
+                    </p>
                     <ul>
                         <li>Création de sites internet (Vitrines & E-commerce)</li>
                         <li>Applications Web sur mesure & Mobiles (iOS & Android)</li>
+                        <li>Plateforme collaborative GEC PRO (Transition Zéro Papier)</li>
                         <li>Hardware IT (Matériels informatiques & Réseaux)</li>
                     </ul>
                 </div>
@@ -95,33 +152,94 @@
         </div>
     </section>
 
-    <section id="realisations" class="container section-padding">
-        <h2 class="title">Nos Réalisations</h2>
-        <p class="subtitle">Un aperçu de nos projets majeurs exécutés avec rigueur.</p>
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <img src="https://img.freepik.com/photos-gratuite/concept-immobilier-construction-avec-ingenieur-casque_23-2148107567.jpg" alt="Chantier BTP">
-                <div class="overlay"><h4>BTP & Travaux Publics<br><small>Infrastructures modernes et durables</small></h4></div>
+    <!-- =======================================================================
+         SECTION PLUS DÉVELOPPÉE : SOLUTIONS NUMÉRIQUES (ACCORDÉONS DE VOTRE WORD)
+         ======================================================================= -->
+    <section id="solutions-numeriques" class="container section-padding">
+        <h2 class="title">PRESENTATION DETAILLEE DE GEC PRO</h2>
+        <p class="subtitle">Cliquez sur chaque section pour explorer en profondeur le fonctionnement et les avantages de notre solution.</p>
+        
+        <div style="max-width: 900px; margin: auto;">
+            
+            <details class="gec-detail" open>
+                <summary class="gec-summary">🚨 1. Le Constat : La paralysie administrative des entreprises</summary>
+                <div class="gec-content">
+                    Dans l'écosystème professionnel actuel, la gestion manuelle du courrier et des documents physiques représente un frein majeur à la compétitivité et à la réactivité des équipes. Les structures font face à des pertes récurrentes d'informations, à un manque de traçabilité sur les consignes données, et à un cloisonnement des services qui ralentit la prise de décision. Face à des flux documentaires de plus en plus denses, la recherche d'une correspondance ou la validation d'une urgence se transforme souvent en une perte de temps considérable pour les dirigeants et leurs collaborateurs.
+                </div>
+            </details>
+
+            <details class="gec-detail">
+                <summary class="gec-summary">🚀 2. La Solution : La Plateforme GEC PRO</summary>
+                <div class="gec-content">
+                    Pour répondre à ce défi, notre entreprise a développé <strong>GEC PRO</strong>, une plateforme numérique collaborative de Gestion Électronique des Courriers, conçue pour centraliser et automatiser l'intégralité du cycle de vie de vos documents. Développée avec une interface moderne et intuitive, cette solution interconnecte instantanément tous les services stratégiques de votre entreprise, du Secrétariat à la Direction Générale, en passant par le DAF, les Ressources Humaines, le pôle Commercial et les autres services, garantissant une transition fluide vers le zéro papier.
+                </div>
+            </details>
+
+            <details class="gec-detail">
+                <summary class="gec-summary">📥 3. Le Cœur du Système : Numérisation, routage et confidentialité</summary>
+                <div class="gec-content">
+                    Le fonctionnement de la plateforme repose sur une logique d’aiguillage rigoureuse et sécurisée. Dès l'arrivée d'un document au Secrétariat, il est instantanément numérisé, indexé avec ses métadonnées clés (expéditeur, objet, référence) et stocké de manière unique dans des archives hautement sécurisées. Grâce à un système de filtrage dynamique basé sur les rôles, la confidentialité est absolue : chaque chef de service ne voit sur son tableau de bord que les courriers qui le concernent directement, évitant ainsi la surcharge d'informations et les fuites de données internes.
+                </div>
+            </details>
+
+            <details class="gec-detail">
+                <summary class="gec-summary">🔗 4. La Traçabilité Totale et le Traitement Collaboratif</summary>
+                <div class="gec-content">
+                    La force de <strong>GEC PRO</strong> réside dans sa capacité à maintenir une traçabilité historique inaltérable. Lorsqu'un courrier passe d'un service à un autre, le système fusionne et horodate automatiquement toutes les annotations et instructions précédentes, permettant à la Direction de garder une visibilité parfaite sur l'état d'avancement d'un dossier. De plus, une passerelle de messagerie automatisée envoie une alerte e-mail instantanée au service cible dès qu'un document est transféré, éliminant ainsi le besoin de relances manuelles incessantes.
+                </div>
+            </details>
+
+            <details class="gec-detail">
+                <summary class="gec-summary">💰 5. Le Retour sur Investissement : Productivité et modernisation</summary>
+                <div class="gec-content">
+                    Adopter <strong>GEC PRO</strong>, c'est choisir de moderniser l'image de marque de votre entreprise tout en optimisant vos coûts opérationnels. En éliminant les lenteurs du papier, la plateforme génère un gain de productivité immédiat estimé à <strong>plus de 40 %</strong> sur le traitement des tâches administratives courantes. Elle offre à la direction un outil de pilotage en temps réel, garantit le respect des délais face aux institutions (impôts, banques, partenaires) et sécurise le patrimoine documentaire de votre entreprise à long terme.
+                </div>
+            </details>
+
+            <div style="background: var(--blue); color: white; padding: 25px; border-radius: 10px; margin-top: 30px; text-align: center;">
+                <h4 style="font-size: 1.3rem; margin-bottom: 10px;">En résumé : GEC PRO, c'est quoi ?</h4>
+                <p style="font-size: 1rem; opacity: 0.9;">
+                    GEC PRO est une plateforme conçue pour éradiquer définitivement la lenteur, la perte d'information et les manquements liés à la gestion manuelle des courriers en entreprise. En transformant chaque document papier ou électronique en un flux numérique sécurisé, elle interconnecte instantanément vos pôles clés.
+                </p>
             </div>
-            <div class="portfolio-item">
-                <img src="https://img.freepik.com/photos-gratuite/developpement-programmation-site-web-codage-ordinateur_53876-120948.jpg" alt="Digital">
-                <div class="overlay"><h4>Solutions Numériques<br><small>Applications et plateformes digitales connectées</small></h4></div>
+
+        </div>
+    </section>
+
+    <section id="realisations" class="bg-light section-padding">
+        <div class="container">
+            <h2 class="title">Nos Réalisations</h2>
+            <p class="subtitle">Un aperçu de nos projets majeurs exécutés avec rigueur.</p>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://img.freepik.com/photos-gratuite/concept-immobilier-construction-avec-ingenieur-casque_23-2148107567.jpg" alt="Chantier BTP">
+                    <div class="overlay"><h4>BTP & Travaux Publics<br><small>Infrastructures modernes et durables</small></h4></div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://img.freepik.com/photos-gratuite/developpement-programmation-site-web-codage-ordinateur_53876-120948.jpg" alt="Digital">
+                    <div class="overlay">
+                        <h4>Solutions Numériques (GEC PRO)<br>
+                        <small><strong>+40% de productivité administrative</strong> et flux sécurisés.</small></h4>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="bg-light section-padding">
-        <div class="container">
-            <h2 class="title">Contactez-nous</h2>
-            <p class="subtitle">Zone : SÈME-PODJI, Agblangandan (Sèkandji) - Depuis la Maternité d'Agblangandan vers le Marché Sèkandji.</p>
-            
-            <form action="https://formspree.io/f/xykovkbq" method="POST" class="contact-form">
-                <input type="text" name="nom" placeholder="Nom complet / Nom de l'entreprise" required>
-                <input type="email" name="email" placeholder="Votre Adresse Email" required>
-                <textarea name="message" rows="5" placeholder="Décrivez votre projet (BTP, TIC, Fournitures...)" required></textarea>
-                <button type="submit" class="btn-submit">Envoyer la demande</button>
-            </form>
-        </div>
+    <section id="contact" class="container section-padding">
+        <h2 class="title">Contactez-nous</h2>
+        <p class="subtitle">Zone : SÈME-PODJI, Agblangandan (Sèkandji) - Depuis la Maternité d'Agblangandan vers le Marché Sèkandji.</p>
+        
+        <!-- Zone d'affichage du message de succès ou d'erreur -->
+        <div id="formStatus" style="max-width: 600px; margin: 0 auto 20px auto; text-align: center; border-radius: 5px; font-weight: bold;"></div>
+
+        <!-- Formulaire avec ID contactForm intégré -->
+        <form action="https://formspree.io/f/xykovkbq" method="POST" id="contactForm" class="contact-form">
+            <input type="text" name="nom" placeholder="Nom complet / Nom de l'entreprise" required>
+            <input type="email" name="email" placeholder="Votre Adresse Email" required>
+            <textarea name="message" rows="5" placeholder="Décrivez votre projet (BTP, TIC, Fournitures...)" required></textarea>
+            <button type="submit" class="btn-submit">Envoyer la demande</button>
+        </form>
     </section>
 
     <footer>
